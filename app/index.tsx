@@ -1,24 +1,26 @@
 import { Groups } from "@/src/screens/Groups";
-import { Text, View, StatusBar } from "react-native";
-import {ThemeProvider} from "styled-components"
-import {useFonts, Roboto_400Regular, Roboto_700Bold} from '@expo-google-fonts/roboto'
+import { StatusBar } from "react-native";
+import { ThemeProvider } from "styled-components";
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_700Bold,
+} from "@expo-google-fonts/roboto";
+import { Loading } from "@/src/components/Loading";
 
 import theme from "@/src/theme";
 
-
 export default function Index() {
+  const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
+
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar 
+      <StatusBar
         barStyle="light-content"
-
-
-
-/>
-
-
-      <Groups />
+        backgroundColor="transparent"
+        translucent
+      />
+      {!fontsLoaded ? <Groups /> : <Loading />}
     </ThemeProvider>
-
   );
 }
