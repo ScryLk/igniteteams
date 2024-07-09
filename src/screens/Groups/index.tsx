@@ -9,7 +9,7 @@ import { Container } from "./styles";
 import { useState } from "react";
 
 export function Groups() {
-  const [groups, setGroups] = useState<String[]>([]);
+  const [groups, setGroups] = useState<string[]>([]);
   return (
     <Container>
       <Header />
