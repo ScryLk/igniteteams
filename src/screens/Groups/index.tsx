@@ -3,6 +3,7 @@ import { Header } from "@components/Header";
 import { Highlight } from "@components/Highlight";
 import { FlatList } from "react-native";
 import { ListEmpty } from "@components/ListEmpty";
+import { Button } from "@components/Button";
 
 import { Container } from "./styles";
 import { useState } from "react";
@@ -22,8 +23,10 @@ export function Groups() {
           <ListEmpty message="Que tal cadastrar a primeira turma?" />
         )}
       />
-
-      <GroupCard title="Galera do Ignite" />
+      <Button
+        type="PRIMARY"
+        title="Criar nova Turma"
+        />
     </Container>
   );
 }
