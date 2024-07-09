@@ -1,12 +1,12 @@
 import { Container, Logo } from "./styles";
 
-import logoImg from '@assets/log'
+import logoImg from '../../assets/Logo.png'
 
 
 export function Header() {
   return(
     <Container>
-      <Logo source={}/>
+      <Logo source={logoImg}/>
     </Container>
   )
 }

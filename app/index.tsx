@@ -1,4 +1,4 @@
-import { Groups } from "@/src/screens/Groups";
+import { Groups } from "@screens/Groups";
 import { StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components";
 import {
@@ -6,9 +6,9 @@ import {
   Roboto_400Regular,
   Roboto_700Bold,
 } from "@expo-google-fonts/roboto";
-import { Loading } from "@/src/components/Loading";
+import { Loading } from "@components/Loading";
 
-import theme from "@/src/theme";
+import theme from "../src/theme";
 
 export default function Index() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
@@ -20,7 +20,7 @@ export default function Index() {
         backgroundColor="transparent"
         translucent
       />
-      {!fontsLoaded ? <Groups /> : <Loading />}
+      {fontsLoaded ? <Groups /> : <Loading />}
     </ThemeProvider>
   );
 }
